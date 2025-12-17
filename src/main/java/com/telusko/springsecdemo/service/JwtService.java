@@ -30,7 +30,7 @@ private String secretKey;
                 .setClaims(claim)
                 .setSubject(username)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis()*1000*3))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 3))
                 .signWith(getKey(), SignatureAlgorithm.HS384).compact();
     }
 
